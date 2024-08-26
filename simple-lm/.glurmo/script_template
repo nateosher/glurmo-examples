@@ -1,0 +1,34 @@
+set.seed({{.seed}} + {{.index}})
+
+#----------------------------------
+# General settings
+#----------------------------------
+N = {{.N}}
+beta_0 = {{.beta_0}}
+beta_1 = {{.beta_1}}
+
+#----------------------------------
+# X
+#----------------------------------
+X_sigma = {{.X_sigma}}
+X_mu = {{.X_mu}}
+X = rnorm(N, X_mu, X_sigma)
+
+#----------------------------------
+# y
+#----------------------------------
+epsilon_sigma = {{.epsilon_sigma}}
+epsilon = rnorm(N, 0, epsilon_sigma)
+y = beta_0 + beta_1 * X + epsilon
+
+
+#----------------------------------
+# Model
+#----------------------------------
+sim_data = data.frame(y = y, X = X)
+lm_fit = lm(y ~ X, data = sim_data)
+
+
+
+saveRDS(lm_fit, "{{.results_path}}{{.result_extension}}")
+

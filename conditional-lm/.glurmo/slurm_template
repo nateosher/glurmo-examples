@@ -1,0 +1,12 @@
+#!/bin/sh
+
+#SBATCH --job-name={{.id}}
+#SBATCH --time={{.time}}
+#SBATCH --mail-user={{.email}}
+#SBATCH --mail-type={{.mailtype}}
+#SBATCH --mem={{if lt (atoi .N) 300}}{{.low_memory}}{{else}}{{.high_memory}}{{end}}
+#SBATCH --cpus-per-task={{.cpus}}
+#SBATCH -e "{{.error_path}}"
+#SBATCH -o "{{.output_path}}"
+
+R CMD BATCH --no-save --no-restore {{.path_to_script}}
