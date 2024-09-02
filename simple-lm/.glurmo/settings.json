@@ -1,7 +1,8 @@
 {
 	"general" : {
 		"n_sims" : "5",
-		"id" : "simple_lm"
+		"id" : "simple_lm",
+		"script_extension" : ".R"
 	},
 	"templates" : {
 		"script_extension" : ".R",
@@ -15,7 +16,7 @@
 		"epsilon_sigma" : "1",
 		"time" : "00:01:00",            
 		"email" : "your.email@university.edu",
-		"mailtype" : "BEGIN,END,FAIL",
+		"mailtype" : "END,FAIL",
 		"memory" : "4g",
 		"cpus" : "1"
 	}
