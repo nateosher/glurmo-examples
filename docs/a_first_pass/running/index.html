@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Running - `glurmo` by example</title>
+<meta name="description" content="A brief guide to using the `glurmo` command line utility">
+<meta name="generator" content="Hugo 0.133.1">
+<link href="https://example.com//index.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="https://example.com/a_first_pass/running/">
+<link rel="stylesheet" href="https://example.com/css/theme.min.css">
+<link rel="stylesheet" href="https://example.com/css/chroma.min.css">
+<script defer src="https://example.com//js/fontawesome6/all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js" integrity="sha256-H3cjtrm/ztDeuhCN9I4yh4iN2Ybx/y1RM7rMmAesA0k=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js" integrity="sha256-4XodgW4TwIJuDtf+v6vDJ39FVxI0veC/kSCCmnFp7ck=" crossorigin="anonymous"></script>
+<script src="https://example.com/js/bundle.js"></script><style>
+:root {--custom-background-color: #34a4eb;}
+</style>
+<meta property="og:url" content="https://example.com/a_first_pass/running/">
+  <meta property="og:site_name" content="`glurmo` by example">
+  <meta property="og:title" content="Running">
+  <meta property="og:description" content="Running the simulations Now, for the moment you’ve been waiting for (I assume?): running the simulation study. To run all the simulations, run:
+$ glurmo -r 5 . This will submit all five simulations. Note that you can replace “5” with any positive number, and glurmo will run that many (or at least the maximum number in the study). Note that glurmo will keep track of what simulations have and have not been run; if you run the same command above again, glurmo will submit no jobs, since all jobs will either be running or completed.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="a_first_pass">
+    <meta property="article:published_time" content="2024-09-02T10:27:27-04:00">
+    <meta property="article:modified_time" content="2024-09-02T10:27:27-04:00">
+    <meta property="og:image" content="https://example.com/images/og-image.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://example.com/images/og-image.png">
+  <meta name="twitter:title" content="Running">
+  <meta name="twitter:description" content="Running the simulations Now, for the moment you’ve been waiting for (I assume?): running the simulation study. To run all the simulations, run:
+$ glurmo -r 5 . This will submit all five simulations. Note that you can replace “5” with any positive number, and glurmo will run that many (or at least the maximum number in the study). Note that glurmo will keep track of what simulations have and have not been run; if you run the same command above again, glurmo will submit no jobs, since all jobs will either be running or completed.">
+
+  <meta itemprop="name" content="Running">
+  <meta itemprop="description" content="Running the simulations Now, for the moment you’ve been waiting for (I assume?): running the simulation study. To run all the simulations, run:
+$ glurmo -r 5 . This will submit all five simulations. Note that you can replace “5” with any positive number, and glurmo will run that many (or at least the maximum number in the study). Note that glurmo will keep track of what simulations have and have not been run; if you run the same command above again, glurmo will submit no jobs, since all jobs will either be running or completed.">
+  <meta itemprop="datePublished" content="2024-09-02T10:27:27-04:00">
+  <meta itemprop="dateModified" content="2024-09-02T10:27:27-04:00">
+  <meta itemprop="wordCount" content="248">
+  <meta itemprop="image" content="https://example.com/images/og-image.png"></head>
+<body><div class="container"><header>
+<h1>`glurmo` by example</h1><span class="version">Version 0.1</span><a href="https://github.com/nateosher/glurmo-examples" class="github"><i class="fab fa-github"></i></a>
+<p class="description">A brief guide to using the `glurmo` command line utility</p>
+
+</header>
+
+
+<div class="content-container">
+<main><h1>Running</h1>
+<h1 id="running-the-simulations">Running the simulations</h1>
+<p>Now, for the moment you&rsquo;ve been waiting for (I assume?): running the simulation study. To run all the simulations, run:</p>
+<pre tabindex="0"><code>$ glurmo -r 5 .
+</code></pre><p>This will submit all five simulations. Note that you can replace &ldquo;5&rdquo; with any positive number, and <code>glurmo</code> will run that many (or at least the maximum number in the study). Note that <code>glurmo</code> will keep track of what simulations have and have not been run; if you run the same command above again, <code>glurmo</code> will submit no jobs, since all jobs will either be running or completed.</p>
+<p>These scripts are quite simple, and should run basically instantaneously (though of course this depends on the slurm load). Once the scripts have completed, we can look at what has changed in the sub-directories.</p>
+<h2 id="results"><code>results</code></h2>
+<p>The results folder should now have 5 files: <code>results___0.RData</code> through <code>results___4.RData</code>. These are the results we saved from each of the respective scripts.</p>
+<h2 id="slurm_out"><code>slurm_out</code></h2>
+<p>This directory contains the output generated by slurm for each simulation. Per our slurm file, there will be two files per simulation: <code>output___{index}</code> and <code>output___{index}.Rout</code>. The <code>output___{index}</code> files should be empty, but the <code>.Rout</code> files show what code was run and how long it took. They will also show errors when they occur, which is <em><strong>extremely</strong></em> useful for debugging simulations.</p>
+<h2 id="slurm_errors"><code>slurm_errors</code></h2>
+<p><code>slurm_errors</code> contains the error output for each simulation&rsquo;s slurm script. Each output file will be of the form <code>error___{index}</code>. However, since nothing went wrong in these simulations, all files should be empty.</p>
+<div class="edit-meta">
+Last updated on 2 Sep 2024
+
+
+<br>
+Published on 2 Sep 2024
+<br><a href="https://github.com/thingsym/hugo-theme-techdoc/edit/master/a_first_pass/running.md" class="edit-page"><i class="fas fa-pen-square"></i>&nbsp;Edit on GitHub</a></div><nav class="pagination"><a class="nav nav-prev" href="https://example.com/a_first_pass/setting_up/" title="Setting up"><i class="fas fa-arrow-left" aria-hidden="true"></i>&nbsp;Prev - Setting up</a>
+<a class="nav nav-next" href="https://example.com/a_first_pass/conclusion/" title="Conclusion">Next - Conclusion <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
+</footer>
+</main>
+<div class="sidebar">
+
+<nav class="open-menu">
+<ul>
+<li class=""><a href="https://example.com/">Home</a></li>
+
+<li class=""><a href="https://example.com/getting_started/">Getting started</a>
+  
+</li>
+
+<li class="parent"><a href="https://example.com/a_first_pass/">A first pass</a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://example.com/a_first_pass/settings_files/">Configuration files</a></li>
+<li class=""><a href="https://example.com/a_first_pass/setting_up/">Setting up</a></li>
+<li class="active"><a href="https://example.com/a_first_pass/running/">Running</a></li>
+<li class=""><a href="https://example.com/a_first_pass/conclusion/">Conclusion</a></li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://example.com/parameter_vectors/">Parameter vectors</a>
+  
+</li>
+
+<li class=""><a href="https://example.com/multiple_parameter_vectors/">Multiple parameter vectors</a>
+  
+</li>
+
+<li class=""><a href="https://example.com/templating_logic/">Templating logic</a>
+  
+</li>
+</ul>
+</nav>
+
+
+
+<div class="sidebar-footer"></div>
+</div>
+
+</div><a href="#" id="backtothetop-fixed" class="backtothetop"
+ data-backtothetop-duration="600"
+ data-backtothetop-easing="easeOutQuart"
+ data-backtothetop-fixed-fadeIn="1000"
+ data-backtothetop-fixed-fadeOut="1000"
+ data-backtothetop-fixed-bottom="10"
+ data-backtothetop-fixed-right="20">
+<span class="fa-layers fa-fw">
+<i class="fas fa-circle"></i>
+<i class="fas fa-arrow-circle-up"></i>
+</span></a>
+</div>
+</body>
+</html>
