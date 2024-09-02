@@ -1,8 +1,7 @@
 {
 	"general" : {
 		"n_sims" : "5",
-		"id" : "simple_lm",
-		"script_extension" : ".R"
+		"id" : "simple_lm"
 	},
 	"templates" : {
 		"script_extension" : ".R",
