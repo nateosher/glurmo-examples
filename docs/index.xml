@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Introduction on `glurmo` by example</title>
-    <link>https://example.com/</link>
+    <link>https://nateosher.github.io/glurmo-examples/</link>
     <description>Recent content in Introduction on `glurmo` by example</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 02 Sep 2024 10:44:56 -0400</lastBuildDate>
-    <atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nateosher.github.io/glurmo-examples/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Configuration files</title>
-      <link>https://example.com/a_first_pass/settings_files/</link>
+      <link>https://nateosher.github.io/glurmo-examples/a_first_pass/settings_files/</link>
       <pubDate>Mon, 26 Aug 2024 17:27:12 -0400</pubDate>
-      <guid>https://example.com/a_first_pass/settings_files/</guid>
+      <guid>https://nateosher.github.io/glurmo-examples/a_first_pass/settings_files/</guid>
       <description>Overview At the core of every glurmo simulation there is a settings directory, .glurmo, which contains three configuration files: settings.json, script_template, and slurm_template. We will start by going through each of these files in turn.&#xA;settings.json settings.json is the file in which you specify the general settings of your simulation as well as the specific parameters for the script and the slurm script. We will go over each of these in turn, but first, an important note: you cannot use comments in settings.</description>
     </item>
     <item>
       <title>Setting up</title>
-      <link>https://example.com/a_first_pass/setting_up/</link>
+      <link>https://nateosher.github.io/glurmo-examples/a_first_pass/setting_up/</link>
       <pubDate>Mon, 02 Sep 2024 10:02:51 -0400</pubDate>
-      <guid>https://example.com/a_first_pass/setting_up/</guid>
+      <guid>https://nateosher.github.io/glurmo-examples/a_first_pass/setting_up/</guid>
       <description>Setting up the simulation In order to run the simulations, we must set up the directory. This entails glurmo creating the actual scripts and slurm scripts, as well as setting up the general directory structure. To set up the directory, ensure your current directory is simple-lm, and then run:&#xA;$ glurmo -s . Note that you can also run setup from a different directory, as the final argument is simply the path to whichever directory you&amp;rsquo;d like to run glurmo on.</description>
     </item>
     <item>
       <title>Running</title>
-      <link>https://example.com/a_first_pass/running/</link>
+      <link>https://nateosher.github.io/glurmo-examples/a_first_pass/running/</link>
       <pubDate>Mon, 02 Sep 2024 10:27:27 -0400</pubDate>
-      <guid>https://example.com/a_first_pass/running/</guid>
+      <guid>https://nateosher.github.io/glurmo-examples/a_first_pass/running/</guid>
       <description>Running the simulations Now, for the moment you&amp;rsquo;ve been waiting for (I assume?): running the simulation study. To run all the simulations, run:&#xA;$ glurmo -r 5 . This will submit all five simulations. Note that you can replace &amp;ldquo;5&amp;rdquo; with any positive number, and glurmo will run that many (or at least the maximum number in the study). Note that glurmo will keep track of what simulations have and have not been run; if you run the same command above again, glurmo will submit no jobs, since all jobs will either be running or completed.</description>
     </item>
     <item>
       <title>Conclusion</title>
-      <link>https://example.com/a_first_pass/conclusion/</link>
+      <link>https://nateosher.github.io/glurmo-examples/a_first_pass/conclusion/</link>
       <pubDate>Mon, 02 Sep 2024 10:44:56 -0400</pubDate>
-      <guid>https://example.com/a_first_pass/conclusion/</guid>
+      <guid>https://nateosher.github.io/glurmo-examples/a_first_pass/conclusion/</guid>
       <description>Conclusion This has been a fairly basic introduction to glurmo, and hopefully it has made some of the benefits clear to you:&#xA;glurmo makes it easy to keep your simulations and results organized glurmo makes it easy to re-use various aspects of your simulations in future simulations glurmo helps you avoid worrying about the nitty-gritty paths you use by giving you access to script specific variables However, if you&amp;rsquo;ve run simulation studies, this all probably raises a pretty natural question: what if you want to vary parameters in the simulation?</description>
     </item>
   </channel>

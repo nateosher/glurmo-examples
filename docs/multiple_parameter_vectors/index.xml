@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Multiple parameter vectors on `glurmo` by example</title>
-    <link>https://example.com/multiple_parameter_vectors/</link>
+    <link>https://nateosher.github.io/glurmo-examples/multiple_parameter_vectors/</link>
     <description>Recent content in Multiple parameter vectors on `glurmo` by example</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="https://example.com/multiple_parameter_vectors/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nateosher.github.io/glurmo-examples/multiple_parameter_vectors/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
