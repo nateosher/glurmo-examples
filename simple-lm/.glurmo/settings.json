@@ -16,7 +16,7 @@
 		"time" : "00:01:00",            
 		"email" : "your.email@university.edu",
 		"mailtype" : "END,FAIL",
-		"memory" : "4g",
+		"memory" : "1g",
 		"cpus" : "1"
 	}
 }
