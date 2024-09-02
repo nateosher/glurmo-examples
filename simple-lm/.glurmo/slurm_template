@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#SBATCH --job-name={{.sim_id}}
+#SBATCH --job-name={{.job_id}}
 #SBATCH --time={{.time}}
 #SBATCH --mail-user={{.email}}
 #SBATCH --mail-type={{.mailtype}}
