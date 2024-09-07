@@ -3,11 +3,11 @@
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>Categories - `glurmo` by example</title>
+<title>Running - `glurmo` by example</title>
 <meta name="description" content="A brief guide to using the `glurmo` command line utility">
 <meta name="generator" content="Hugo 0.133.1">
 <link href="https://nateosher.github.io/glurmo-examples//index.xml" rel="alternate" type="application/rss+xml">
-<link rel="canonical" href="https://nateosher.github.io/glurmo-examples/categories/">
+<link rel="canonical" href="https://nateosher.github.io/glurmo-examples/parameter_vectors/running_simulation/">
 <link rel="stylesheet" href="https://nateosher.github.io/glurmo-examples/css/theme.min.css">
 <link rel="stylesheet" href="https://nateosher.github.io/glurmo-examples/css/chroma.min.css">
 <script defer src="https://nateosher.github.io/glurmo-examples//js/fontawesome6/all.min.js"></script>
@@ -17,21 +17,33 @@
 <script src="https://nateosher.github.io/glurmo-examples/js/bundle.js"></script><style>
 :root {--custom-background-color: #34a4eb;}
 </style>
-<meta property="og:url" content="https://nateosher.github.io/glurmo-examples/categories/">
+<meta property="og:url" content="https://nateosher.github.io/glurmo-examples/parameter_vectors/running_simulation/">
   <meta property="og:site_name" content="`glurmo` by example">
-  <meta property="og:title" content="Categories">
-  <meta property="og:description" content="A brief guide to using the `glurmo` command line utility">
+  <meta property="og:title" content="Running">
+  <meta property="og:description" content="Running the simulation There are two ways we could run this simulation. Since all three subdirectories are themselves complete glurmo directories, we could simply go to each of them in turn in whatever order we choose and run them sequentially. However, we can also run them all in parallel from the varied-lm directory.
+To do so, ensure you are in the varied-lm subdirectory, and simply run the command:
+$ glurmo -r 5 .">
   <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="parameter_vectors">
+    <meta property="article:published_time" content="2024-09-07T07:59:26-04:00">
+    <meta property="article:modified_time" content="2024-09-07T07:59:26-04:00">
     <meta property="og:image" content="https://nateosher.github.io/glurmo-examples/images/og-image.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://nateosher.github.io/glurmo-examples/images/og-image.png">
-  <meta name="twitter:title" content="Categories">
-  <meta name="twitter:description" content="A brief guide to using the `glurmo` command line utility">
+  <meta name="twitter:title" content="Running">
+  <meta name="twitter:description" content="Running the simulation There are two ways we could run this simulation. Since all three subdirectories are themselves complete glurmo directories, we could simply go to each of them in turn in whatever order we choose and run them sequentially. However, we can also run them all in parallel from the varied-lm directory.
+To do so, ensure you are in the varied-lm subdirectory, and simply run the command:
+$ glurmo -r 5 .">
 
-  <meta itemprop="name" content="Categories">
-  <meta itemprop="description" content="A brief guide to using the `glurmo` command line utility">
+  <meta itemprop="name" content="Running">
+  <meta itemprop="description" content="Running the simulation There are two ways we could run this simulation. Since all three subdirectories are themselves complete glurmo directories, we could simply go to each of them in turn in whatever order we choose and run them sequentially. However, we can also run them all in parallel from the varied-lm directory.
+To do so, ensure you are in the varied-lm subdirectory, and simply run the command:
+$ glurmo -r 5 .">
+  <meta itemprop="datePublished" content="2024-09-07T07:59:26-04:00">
+  <meta itemprop="dateModified" content="2024-09-07T07:59:26-04:00">
+  <meta itemprop="wordCount" content="171">
   <meta itemprop="image" content="https://nateosher.github.io/glurmo-examples/images/og-image.png"></head>
 <body><div class="container"><header>
 <h1>`glurmo` by example</h1><span class="version">Version 0.1</span><a href="https://github.com/nateosher/glurmo-examples" class="github"><i class="fab fa-github"></i></a>
@@ -41,9 +53,24 @@
 
 
 <div class="content-container">
-<main><h1>Categories</h1><div class="edit-meta">
+<main><h1>Running</h1>
+<h1 id="running-the-simulation">Running the simulation</h1>
+<p>There are two ways we could run this simulation. Since all three subdirectories are themselves complete <code>glurmo</code> directories, we could simply go to each of them in turn in whatever order we choose and run them sequentially. However, we can also run them all in parallel from the <code>varied-lm</code> directory.</p>
+<p>To do so, ensure you are in the <code>varied-lm</code> subdirectory, and simply run the command:</p>
+<pre tabindex="0"><code>$ glurmo -r 5 .
+</code></pre><p>After some amount of time, you should get the following message:</p>
+<pre tabindex="0"><code>$ Successfully submitted 15 jobs
+</code></pre><p>Why 15 when we only submitted 5? When you submit jobs in a <code>glurmo</code> directory that contains <code>glurmo</code> subdirectories, the number of jobs you submit will be submitted in all of those subdirectories. Since there are three <code>glurmo</code> subdirectories, this command submitted a total of 15 jobs.</p>
+<h1 id="next-steps">Next steps</h1>
+<p>Hopefully this raises a pretty natural question for you: what happens if you have multiple parameters with parameter vectors? We&rsquo;ll cover that in the next section, but in short, exactly what you&rsquo;d expect.</p>
+<div class="edit-meta">
+Last updated on 7 Sep 2024
 
-<br></div><nav class="pagination"><a class="nav nav-next" href="https://nateosher.github.io/glurmo-examples/getting_started/" title="Getting started">Next - Getting started <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+
+<br>
+Published on 7 Sep 2024
+<br><a href="https://github.com/thingsym/hugo-theme-techdoc/edit/master/parameter_vectors/running_simulation.md" class="edit-page"><i class="fas fa-pen-square"></i>&nbsp;Edit on GitHub</a></div><nav class="pagination"><a class="nav nav-prev" href="https://nateosher.github.io/glurmo-examples/parameter_vectors/first_glance/" title="Setting up"><i class="fas fa-arrow-left" aria-hidden="true"></i>&nbsp;Prev - Setting up</a>
+<a class="nav nav-next" href="https://nateosher.github.io/glurmo-examples/multiple_parameter_vectors/" title="Multiple parameter vectors">Next - Multiple parameter vectors <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
 </footer>
 </main>
@@ -68,11 +95,11 @@
   
 </li>
 
-<li class=""><a href="https://nateosher.github.io/glurmo-examples/parameter_vectors/">Parameter vectors</a>
+<li class="parent"><a href="https://nateosher.github.io/glurmo-examples/parameter_vectors/">Parameter vectors</a>
   
 <ul class="sub-menu">
 <li class=""><a href="https://nateosher.github.io/glurmo-examples/parameter_vectors/first_glance/">Setting up</a></li>
-<li class=""><a href="https://nateosher.github.io/glurmo-examples/parameter_vectors/running_simulation/">Running</a></li>
+<li class="active"><a href="https://nateosher.github.io/glurmo-examples/parameter_vectors/running_simulation/">Running</a></li>
 </ul>
   
 </li>

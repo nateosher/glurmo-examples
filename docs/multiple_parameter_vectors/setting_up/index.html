@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Setting up - `glurmo` by example</title>
+<meta name="description" content="A brief guide to using the `glurmo` command line utility">
+<meta name="generator" content="Hugo 0.133.1">
+<link href="https://nateosher.github.io/glurmo-examples//index.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="https://nateosher.github.io/glurmo-examples/multiple_parameter_vectors/setting_up/">
+<link rel="stylesheet" href="https://nateosher.github.io/glurmo-examples/css/theme.min.css">
+<link rel="stylesheet" href="https://nateosher.github.io/glurmo-examples/css/chroma.min.css">
+<script defer src="https://nateosher.github.io/glurmo-examples//js/fontawesome6/all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js" integrity="sha256-H3cjtrm/ztDeuhCN9I4yh4iN2Ybx/y1RM7rMmAesA0k=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js" integrity="sha256-4XodgW4TwIJuDtf+v6vDJ39FVxI0veC/kSCCmnFp7ck=" crossorigin="anonymous"></script>
+<script src="https://nateosher.github.io/glurmo-examples/js/bundle.js"></script><style>
+:root {--custom-background-color: #34a4eb;}
+</style>
+<meta property="og:url" content="https://nateosher.github.io/glurmo-examples/multiple_parameter_vectors/setting_up/">
+  <meta property="og:site_name" content="`glurmo` by example">
+  <meta property="og:title" content="Setting up">
+  <meta property="og:description" content="Multiple parameter vectors If we look at .glurmo/settings.json we will see a new change in addition to the one from the previous section:
+... &#34;N&#34; : &#34;@[100, 200, 300]&#34;, &#34;beta_0&#34; : &#34;1&#34;,	&#34;beta_1&#34; : &#34;@[1, 2, 3]&#34;, ... Now, in addition to varying beta_1, we’ll be varying the sample size N as well.
+Setting up We can set up this simulation in exactly the same way as before. As always, ensure you are in the simulation directory and run:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="multiple_parameter_vectors">
+    <meta property="article:published_time" content="2024-09-07T08:25:28-04:00">
+    <meta property="article:modified_time" content="2024-09-07T08:25:28-04:00">
+    <meta property="og:image" content="https://nateosher.github.io/glurmo-examples/images/og-image.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://nateosher.github.io/glurmo-examples/images/og-image.png">
+  <meta name="twitter:title" content="Setting up">
+  <meta name="twitter:description" content="Multiple parameter vectors If we look at .glurmo/settings.json we will see a new change in addition to the one from the previous section:
+... &#34;N&#34; : &#34;@[100, 200, 300]&#34;, &#34;beta_0&#34; : &#34;1&#34;,	&#34;beta_1&#34; : &#34;@[1, 2, 3]&#34;, ... Now, in addition to varying beta_1, we’ll be varying the sample size N as well.
+Setting up We can set up this simulation in exactly the same way as before. As always, ensure you are in the simulation directory and run:">
+
+  <meta itemprop="name" content="Setting up">
+  <meta itemprop="description" content="Multiple parameter vectors If we look at .glurmo/settings.json we will see a new change in addition to the one from the previous section:
+... &#34;N&#34; : &#34;@[100, 200, 300]&#34;, &#34;beta_0&#34; : &#34;1&#34;,	&#34;beta_1&#34; : &#34;@[1, 2, 3]&#34;, ... Now, in addition to varying beta_1, we’ll be varying the sample size N as well.
+Setting up We can set up this simulation in exactly the same way as before. As always, ensure you are in the simulation directory and run:">
+  <meta itemprop="datePublished" content="2024-09-07T08:25:28-04:00">
+  <meta itemprop="dateModified" content="2024-09-07T08:25:28-04:00">
+  <meta itemprop="wordCount" content="251">
+  <meta itemprop="image" content="https://nateosher.github.io/glurmo-examples/images/og-image.png"></head>
+<body><div class="container"><header>
+<h1>`glurmo` by example</h1><span class="version">Version 0.1</span><a href="https://github.com/nateosher/glurmo-examples" class="github"><i class="fab fa-github"></i></a>
+<p class="description">A brief guide to using the `glurmo` command line utility</p>
+
+</header>
+
+
+<div class="content-container">
+<main><h1>Setting up</h1>
+<h1 id="multiple-parameter-vectors">Multiple parameter vectors</h1>
+<p>If we look at <code>.glurmo/settings.json</code> we will see a new change in addition to the one from the previous section:</p>
+<pre tabindex="0"><code>...
+    &#34;N&#34; : &#34;@[100, 200, 300]&#34;,
+	&#34;beta_0&#34; : &#34;1&#34;,	
+	&#34;beta_1&#34; : &#34;@[1, 2, 3]&#34;,
+...
+</code></pre><p>Now, in addition to varying <code>beta_1</code>, we&rsquo;ll be varying the sample size <code>N</code> as well.</p>
+<h1 id="setting-up">Setting up</h1>
+<p>We can set up this simulation in exactly the same way as before. As always, ensure you are in the simulation directory and run:</p>
+<pre tabindex="0"><code>$ glurmo -s .
+</code></pre><p>You will see substantially more messages showing the progress of the setup, though this should not take too long. If you look at the contents of <code>varied-lm-2</code>, you should now see three subdirectories: <code>N_100</code>, <code>N_200</code>, and <code>N_300</code>. These are exactly analogous to the subdirectories that were set up in the previous example.</p>
+<p>Let&rsquo;s check the settings file in <code>N_100</code>, which can be found in <code>N_100/.glurmo/settings.json</code>. Specifically, let&rsquo;s look at the entry for <code>beta_1</code>:</p>
+<pre tabindex="0"><code>...
+    &#34;beta_1&#34;: &#34;@[1, 2, 3]&#34;
+...
+</code></pre><p>This again speaks to the recursive nature of <code>glurmo</code> directories: each setting for <code>N</code> is just a <code>glurmo</code> simulation with <code>N</code> set to a specific value, and aside from that all of the same parameter settings (including parameter vectors).</p>
+<p>It is worth emphasizing that by changing a single line in our settings file (not including the simulation id), we went from having three simulation settings to nine. This is one of the really nice things about <code>.glurmo</code>: it makes it easy to alter and scale up simulations as necessary.</p>
+<div class="edit-meta">
+Last updated on 7 Sep 2024
+
+
+<br>
+Published on 7 Sep 2024
+<br><a href="https://github.com/thingsym/hugo-theme-techdoc/edit/master/multiple_parameter_vectors/setting_up.md" class="edit-page"><i class="fas fa-pen-square"></i>&nbsp;Edit on GitHub</a></div><nav class="pagination"><a class="nav nav-prev" href="https://nateosher.github.io/glurmo-examples/multiple_parameter_vectors/" title="Multiple parameter vectors"><i class="fas fa-arrow-left" aria-hidden="true"></i>&nbsp;Prev - Multiple parameter vectors</a>
+<a class="nav nav-next" href="https://nateosher.github.io/glurmo-examples/multiple_parameter_vectors/running/" title="Running">Next - Running <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
+</footer>
+</main>
+<div class="sidebar">
+
+<nav class="open-menu">
+<ul>
+<li class=""><a href="https://nateosher.github.io/glurmo-examples/">Home</a></li>
+
+<li class=""><a href="https://nateosher.github.io/glurmo-examples/getting_started/">Getting started</a>
+  
+</li>
+
+<li class=""><a href="https://nateosher.github.io/glurmo-examples/a_first_pass/">A first pass</a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://nateosher.github.io/glurmo-examples/a_first_pass/settings_files/">Configuration files</a></li>
+<li class=""><a href="https://nateosher.github.io/glurmo-examples/a_first_pass/setting_up/">Setting up</a></li>
+<li class=""><a href="https://nateosher.github.io/glurmo-examples/a_first_pass/running/">Running</a></li>
+<li class=""><a href="https://nateosher.github.io/glurmo-examples/a_first_pass/conclusion/">Conclusion</a></li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://nateosher.github.io/glurmo-examples/parameter_vectors/">Parameter vectors</a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://nateosher.github.io/glurmo-examples/parameter_vectors/first_glance/">Setting up</a></li>
+<li class=""><a href="https://nateosher.github.io/glurmo-examples/parameter_vectors/running_simulation/">Running</a></li>
+</ul>
+  
+</li>
+
+<li class="parent"><a href="https://nateosher.github.io/glurmo-examples/multiple_parameter_vectors/">Multiple parameter vectors</a>
+  
+<ul class="sub-menu">
+<li class="active"><a href="https://nateosher.github.io/glurmo-examples/multiple_parameter_vectors/setting_up/">Setting up</a></li>
+<li class=""><a href="https://nateosher.github.io/glurmo-examples/multiple_parameter_vectors/running/">Running</a></li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://nateosher.github.io/glurmo-examples/templating_logic/">Templating logic</a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://nateosher.github.io/glurmo-examples/templating_logic/setting_up/">Setting up</a></li>
+<li class=""><a href="https://nateosher.github.io/glurmo-examples/templating_logic/running/">Running</a></li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://nateosher.github.io/glurmo-examples/conclusion/">Conclusion</a>
+  
+</li>
+</ul>
+</nav>
+
+
+
+<div class="sidebar-footer"></div>
+</div>
+
+</div><a href="#" id="backtothetop-fixed" class="backtothetop"
+ data-backtothetop-duration="600"
+ data-backtothetop-easing="easeOutQuart"
+ data-backtothetop-fixed-fadeIn="1000"
+ data-backtothetop-fixed-fadeOut="1000"
+ data-backtothetop-fixed-bottom="10"
+ data-backtothetop-fixed-right="20">
+<span class="fa-layers fa-fw">
+<i class="fas fa-circle"></i>
+<i class="fas fa-arrow-circle-up"></i>
+</span></a>
+</div>
+</body>
+</html>

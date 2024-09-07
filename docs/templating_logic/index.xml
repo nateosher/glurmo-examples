@@ -6,7 +6,21 @@
     <description>Recent content in Templating logic on `glurmo` by example</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate></lastBuildDate>
+    <lastBuildDate>Sat, 07 Sep 2024 10:11:41 -0400</lastBuildDate>
     <atom:link href="https://nateosher.github.io/glurmo-examples/templating_logic/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setting up</title>
+      <link>https://nateosher.github.io/glurmo-examples/templating_logic/setting_up/</link>
+      <pubDate>Sat, 07 Sep 2024 09:19:13 -0400</pubDate>
+      <guid>https://nateosher.github.io/glurmo-examples/templating_logic/setting_up/</guid>
+      <description>Templating logic Suppose we decide that only one gigabyte of memory is pushing it for the simulations where N is set to 300. We could simply change the memory parameter to &amp;ldquo;2g&amp;rdquo;, but as discussed in the introduction, this might not be ideal. It would be nice if we could set all the settings where N is less than 300 to run with 1 gigabyte of RAM, and those where N is 300 (and eventually greater) to run with 2 gigabytes of RAM.</description>
+    </item>
+    <item>
+      <title>Running</title>
+      <link>https://nateosher.github.io/glurmo-examples/templating_logic/running/</link>
+      <pubDate>Sat, 07 Sep 2024 10:11:41 -0400</pubDate>
+      <guid>https://nateosher.github.io/glurmo-examples/templating_logic/running/</guid>
+      <description>Running the simulation For the sake of completeness, let&amp;rsquo;s run the simulation to make sure everything worked as expected:&#xA;$ glurmo -r 5 . The results should be exactly the same as previous simulations, and you can find them in the same places.</description>
+    </item>
   </channel>
 </rss>

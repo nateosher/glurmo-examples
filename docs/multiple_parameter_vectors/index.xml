@@ -6,7 +6,21 @@
     <description>Recent content in Multiple parameter vectors on `glurmo` by example</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate></lastBuildDate>
+    <lastBuildDate>Sat, 07 Sep 2024 08:46:58 -0400</lastBuildDate>
     <atom:link href="https://nateosher.github.io/glurmo-examples/multiple_parameter_vectors/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setting up</title>
+      <link>https://nateosher.github.io/glurmo-examples/multiple_parameter_vectors/setting_up/</link>
+      <pubDate>Sat, 07 Sep 2024 08:25:28 -0400</pubDate>
+      <guid>https://nateosher.github.io/glurmo-examples/multiple_parameter_vectors/setting_up/</guid>
+      <description>Multiple parameter vectors If we look at .glurmo/settings.json we will see a new change in addition to the one from the previous section:&#xA;... &amp;#34;N&amp;#34; : &amp;#34;@[100, 200, 300]&amp;#34;, &amp;#34;beta_0&amp;#34; : &amp;#34;1&amp;#34;,&#x9;&amp;#34;beta_1&amp;#34; : &amp;#34;@[1, 2, 3]&amp;#34;, ... Now, in addition to varying beta_1, we&amp;rsquo;ll be varying the sample size N as well.&#xA;Setting up We can set up this simulation in exactly the same way as before. As always, ensure you are in the simulation directory and run:</description>
+    </item>
+    <item>
+      <title>Running</title>
+      <link>https://nateosher.github.io/glurmo-examples/multiple_parameter_vectors/running/</link>
+      <pubDate>Sat, 07 Sep 2024 08:46:58 -0400</pubDate>
+      <guid>https://nateosher.github.io/glurmo-examples/multiple_parameter_vectors/running/</guid>
+      <description>Running the simulation Finally, we will run the simulation in the same way as we did previously:&#xA;$ glurmo -r 5 . You should see the following message:&#xA;Successfully submitted 45 jobs Just to be explicit: we have submitted five jobs per setting, and there are three settings for beta_1 times three settings for N for a total of nine settings. The output, as always, will be saved to the results folder of each simulation subdirectory.</description>
+    </item>
   </channel>
 </rss>

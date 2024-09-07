@@ -20,7 +20,7 @@
 <meta property="og:url" content="https://nateosher.github.io/glurmo-examples/parameter_vectors/">
   <meta property="og:site_name" content="`glurmo` by example">
   <meta property="og:title" content="Parameter vectors">
-  <meta property="og:description" content="Introduction to parameter vectors The point of most simulations is to see how a model behaves across different parameter settings. You can accomplish this using what we have learned in glurmo so far, but it wouldn’t be pretty. You’d have to either create a new simulation for each setting, or use the index script variable to set parameter settings manually. It would be nice if there was a simpler way to accomplish this using glurmo.">
+  <meta property="og:description" content="Introduction to parameter vectors The point of most simulations is to see how a model behaves across different parameter settings. You can accomplish this using what we have learned in glurmo so far, but it wouldn’t be pretty. You’d have to either create a new simulation for each setting, or use the index script variable to set parameter settings manually. And at that point, why not just use job arrays? It would be nice if there was a simpler way to accomplish this using glurmo.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
     <meta property="og:image" content="https://nateosher.github.io/glurmo-examples/images/og-image.png">
@@ -28,13 +28,13 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://nateosher.github.io/glurmo-examples/images/og-image.png">
   <meta name="twitter:title" content="Parameter vectors">
-  <meta name="twitter:description" content="Introduction to parameter vectors The point of most simulations is to see how a model behaves across different parameter settings. You can accomplish this using what we have learned in glurmo so far, but it wouldn’t be pretty. You’d have to either create a new simulation for each setting, or use the index script variable to set parameter settings manually. It would be nice if there was a simpler way to accomplish this using glurmo.">
+  <meta name="twitter:description" content="Introduction to parameter vectors The point of most simulations is to see how a model behaves across different parameter settings. You can accomplish this using what we have learned in glurmo so far, but it wouldn’t be pretty. You’d have to either create a new simulation for each setting, or use the index script variable to set parameter settings manually. And at that point, why not just use job arrays? It would be nice if there was a simpler way to accomplish this using glurmo.">
 
   <meta itemprop="name" content="Parameter vectors">
-  <meta itemprop="description" content="Introduction to parameter vectors The point of most simulations is to see how a model behaves across different parameter settings. You can accomplish this using what we have learned in glurmo so far, but it wouldn’t be pretty. You’d have to either create a new simulation for each setting, or use the index script variable to set parameter settings manually. It would be nice if there was a simpler way to accomplish this using glurmo.">
+  <meta itemprop="description" content="Introduction to parameter vectors The point of most simulations is to see how a model behaves across different parameter settings. You can accomplish this using what we have learned in glurmo so far, but it wouldn’t be pretty. You’d have to either create a new simulation for each setting, or use the index script variable to set parameter settings manually. And at that point, why not just use job arrays? It would be nice if there was a simpler way to accomplish this using glurmo.">
   <meta itemprop="datePublished" content="2024-09-02T10:51:32-04:00">
   <meta itemprop="dateModified" content="2024-09-02T10:51:32-04:00">
-  <meta itemprop="wordCount" content="116">
+  <meta itemprop="wordCount" content="126">
   <meta itemprop="image" content="https://nateosher.github.io/glurmo-examples/images/og-image.png"></head>
 <body><div class="container"><header>
 <h1>`glurmo` by example</h1><span class="version">Version 0.1</span><a href="https://github.com/nateosher/glurmo-examples" class="github"><i class="fab fa-github"></i></a>
@@ -45,7 +45,7 @@
 
 <div class="content-container">
 <main><h1>Parameter vectors</h1><h1 id="introduction-to-parameter-vectors">Introduction to parameter vectors</h1>
-<p>The point of most simulations is to see how a model behaves across different parameter settings. You can accomplish this using what we have learned in <code>glurmo</code> so far, but it wouldn&rsquo;t be pretty. You&rsquo;d have to either create a new simulation for each setting, or use the <code>index</code> script variable to set parameter settings manually. It would be nice if there was a simpler way to accomplish this using <code>glurmo</code>.</p>
+<p>The point of most simulations is to see how a model behaves across different parameter settings. You can accomplish this using what we have learned in <code>glurmo</code> so far, but it wouldn&rsquo;t be pretty. You&rsquo;d have to either create a new simulation for each setting, or use the <code>index</code> script variable to set parameter settings manually. And at that point, why not just use job arrays? It would be nice if there was a simpler way to accomplish this using <code>glurmo</code>.</p>
 <p>You&rsquo;ll be happy to know that there is, in fact, a simpler way to accomplish this using <code>glurmo</code>: parameter vectors. This part of the tutorial will focus on the <code>varied-lm</code> directory, which (in case you&rsquo;ve skipped ahead) can be found <a href="https://github.com/nateosher/glurmo-examples/tree/master">here</a>.</p>
 <div class="edit-meta">
 Last updated on 2 Sep 2024
@@ -54,7 +54,7 @@ Last updated on 2 Sep 2024
 <br>
 Published on 2 Sep 2024
 <br><a href="https://github.com/thingsym/hugo-theme-techdoc/edit/master/parameter_vectors/_index.md" class="edit-page"><i class="fas fa-pen-square"></i>&nbsp;Edit on GitHub</a></div><nav class="pagination"><a class="nav nav-prev" href="https://nateosher.github.io/glurmo-examples/a_first_pass/conclusion/" title="Conclusion"><i class="fas fa-arrow-left" aria-hidden="true"></i>&nbsp;Prev - Conclusion</a>
-<a class="nav nav-next" href="https://nateosher.github.io/glurmo-examples/multiple_parameter_vectors/" title="Multiple parameter vectors">Next - Multiple parameter vectors <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<a class="nav nav-next" href="https://nateosher.github.io/glurmo-examples/parameter_vectors/first_glance/" title="Setting up">Next - Setting up <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
 </footer>
 </main>
@@ -81,13 +81,32 @@ Published on 2 Sep 2024
 
 <li class=" active"><a href="https://nateosher.github.io/glurmo-examples/parameter_vectors/">Parameter vectors</a>
   
+<ul class="sub-menu">
+<li class=""><a href="https://nateosher.github.io/glurmo-examples/parameter_vectors/first_glance/">Setting up</a></li>
+<li class=""><a href="https://nateosher.github.io/glurmo-examples/parameter_vectors/running_simulation/">Running</a></li>
+</ul>
+  
 </li>
 
 <li class=""><a href="https://nateosher.github.io/glurmo-examples/multiple_parameter_vectors/">Multiple parameter vectors</a>
   
+<ul class="sub-menu">
+<li class=""><a href="https://nateosher.github.io/glurmo-examples/multiple_parameter_vectors/setting_up/">Setting up</a></li>
+<li class=""><a href="https://nateosher.github.io/glurmo-examples/multiple_parameter_vectors/running/">Running</a></li>
+</ul>
+  
 </li>
 
 <li class=""><a href="https://nateosher.github.io/glurmo-examples/templating_logic/">Templating logic</a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://nateosher.github.io/glurmo-examples/templating_logic/setting_up/">Setting up</a></li>
+<li class=""><a href="https://nateosher.github.io/glurmo-examples/templating_logic/running/">Running</a></li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://nateosher.github.io/glurmo-examples/conclusion/">Conclusion</a>
   
 </li>
 </ul>

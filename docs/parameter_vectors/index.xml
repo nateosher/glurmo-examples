@@ -6,7 +6,21 @@
     <description>Recent content in Parameter vectors on `glurmo` by example</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate></lastBuildDate>
+    <lastBuildDate>Sat, 07 Sep 2024 07:59:26 -0400</lastBuildDate>
     <atom:link href="https://nateosher.github.io/glurmo-examples/parameter_vectors/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setting up</title>
+      <link>https://nateosher.github.io/glurmo-examples/parameter_vectors/first_glance/</link>
+      <pubDate>Sat, 07 Sep 2024 07:27:39 -0400</pubDate>
+      <guid>https://nateosher.github.io/glurmo-examples/parameter_vectors/first_glance/</guid>
+      <description>Introducing parameter vectors If you open varied-lm/.glurmo/settings.json, you&amp;rsquo;ll notice that it&amp;rsquo;s more or less the same as the last settings file, with one exception:&#xA;... &amp;#34;beta_1&amp;#34; : &amp;#34;@[1, 2, 3]&amp;#34;, ... This parameter uses a parameter vector. A parameter vector has the syntax @[param 1, param 2, ... param n], and serve a special purpose in glurmo. Each parameter in the vector represents a distinct simulation setting, and a separate simulation directory will be made for it.</description>
+    </item>
+    <item>
+      <title>Running</title>
+      <link>https://nateosher.github.io/glurmo-examples/parameter_vectors/running_simulation/</link>
+      <pubDate>Sat, 07 Sep 2024 07:59:26 -0400</pubDate>
+      <guid>https://nateosher.github.io/glurmo-examples/parameter_vectors/running_simulation/</guid>
+      <description>Running the simulation There are two ways we could run this simulation. Since all three subdirectories are themselves complete glurmo directories, we could simply go to each of them in turn in whatever order we choose and run them sequentially. However, we can also run them all in parallel from the varied-lm directory.&#xA;To do so, ensure you are in the varied-lm subdirectory, and simply run the command:&#xA;$ glurmo -r 5 .</description>
+    </item>
   </channel>
 </rss>
