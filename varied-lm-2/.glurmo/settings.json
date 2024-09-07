@@ -9,14 +9,14 @@
 		"seed" : "24601",
 		"N" : "@[100, 200, 300]",
 		"beta_0" : "1",	
-		"beta_1" : "2",
+		"beta_1" : "@[1, 2, 3]",
 		"X_sigma" : "2",
 		"X_mu" : "0",
-		"epsilon_sigma" : "@[1, 2, 3]",
+		"epsilon_sigma" : "1",
 		"time" : "00:01:00",            
 		"email" : "your.email@university.edu",
-		"mailtype" : "BEGIN,END,FAIL",
-		"memory" : "4g",
+		"mailtype" : "END,FAIL",
+		"memory" : "1g",
 		"cpus" : "1"
 	}
 }
