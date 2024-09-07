@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#SBATCH --job-name={{.id}}
+#SBATCH --job-name={{.job_id}}
 #SBATCH --time={{.time}}
 #SBATCH --mail-user={{.email}}
 #SBATCH --mail-type={{.mailtype}}
@@ -9,4 +9,4 @@
 #SBATCH -e "{{.error_path}}"
 #SBATCH -o "{{.output_path}}"
 
-R CMD BATCH --no-save --no-restore {{.path_to_script}}
+R CMD BATCH --no-save --no-restore {{.path_to_script}} {{.output_path}}.Rout  
